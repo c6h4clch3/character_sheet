@@ -1,11 +1,16 @@
 version: '2'
 services:
+  data: 
+    build: ./data
+    volumes:
+      - ../:/data
+      - /var/lib/mysql
   mysql:
     build: ./mysql
     environment:
       MYSQL_ROOT_PASSWORD: pass
-    volumes:
-      - db:/var/lib/mysql
+    volumes_from:
+      - data
   php:
     build: ./php
     ports:
@@ -14,5 +19,7 @@ services:
       - ../:/var/www/html
     depends_on:
       - mysql
-volumes:
-  db:
+  composer:
+    build: ./composer
+    volumes_from:
+      - data
