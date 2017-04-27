@@ -1,4 +1,4 @@
-FROM devian:jessie
+FROM debian:jessie
 
 RUN apt-get update -y
 RUN apt-get install -y curl git
@@ -10,9 +10,9 @@ RUN npm i -g n
 RUN n stable
 RUN apt-get purge -y nodejs npm
 
-RUN mkdir -p /data/www
-WORKDIR /data/www
-RUN pwd
+RUN mkdir -p /data
+VOLUME ["data"]
+WORKDIR /data
 
 ENTRYPOINT ["npm"]
 CMD ["-h"]
