@@ -27,3 +27,9 @@ services:
     build: ./npm
     volumes_from:
       - data
+  php-artisan:
+    build: ./php-artisan
+    volumes_from:
+      - data
+    depends_on:
+      - mysql
