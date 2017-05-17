@@ -9,6 +9,9 @@ services:
     build: ./mysql
     environment:
       MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: character_sheet
+      MYSQL_USER: develop
+      MYSQL_PASSWORD: develop
     volumes_from:
       - data
   php:
