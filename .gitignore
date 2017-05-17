@@ -9,3 +9,4 @@ Homestead.json
 /public/css
 /public/vendor
 .DS_Store
+/docker/docker-compose.yml
