@@ -1,13 +1,12 @@
 # character_sheet
-The WebApp for storing Character Sheets of Call of Cthulhu.
+クトゥルフ神話TRPGキャラクターシート作成・保管用Webアプリケーション
 
-## how to develop on docker
-### requires
+## 開発環境セットアップ( Docker )
+### 事前にインストールしておくべきもの
 - docker
 - docker-compose
 
-First, clone this repository to your local file system.  
-Then, `cd docker` and edit `docker-compose.yml` as below.
+docker-compose_sample.ymlをdocker-compose.ymlにリネームし編集する。
 ```
 ...
   php:
@@ -20,6 +19,11 @@ Then, `cd docker` and edit `docker-compose.yml` as below.
       - mysql
 ...
 ```
-Next, hit `docker-compose up -d` to run your local server,  
-`docker-compose run --rm composer install` to install PHP libraries,  
-`docker run php php artisan key:generate` to add APPS_KEY for laravel framework.
+PHPライブラリのインストール(Composer)  
+`$ docker-compose run --rm composer install`  
+
+laravelのAPP_KEY生成  
+`$ docker run php php artisan key:generate`  
+
+ローカルサーバの起動  
+`$ docker-compose up -d`  
