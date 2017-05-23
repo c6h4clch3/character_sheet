@@ -9,12 +9,15 @@ services:
     build: ./mysql
     environment:
       MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: character_sheet
+      MYSQL_USER: develop
+      MYSQL_PASSWORD: develop
     volumes_from:
       - data
   php:
     build: ./php
     ports:
-      - '8081:80'
+#      - '(any port No. you want is OK):80'
     volumes:
       - ../:/var/www/html
     depends_on:
