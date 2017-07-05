@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "electron": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack.electron.js",
+    "electron": "NODE_ENV=development node_modules/webpack/bin/webpack.js --config=webpack.electron.js",
     "start": "cross-env NODE_ENV=development node_modules/electron/cli.js .",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch-poll": "npm run watch -- --watch-poll",
@@ -27,7 +27,8 @@
     "laravel-mix": "0.*",
     "lodash": "^4.17.4",
     "ts-loader": "^2.2.1",
-    "typescript": "^2.4.1",
-    "vue": "^2.1.10"
+    "typescript": "^2.4.1"
+  },
+  "dependencies": {
   }
 }
