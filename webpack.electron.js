@@ -13,13 +13,28 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
+        test: /\.ts$/,
+        use: [
+          'ng-annotate-loader',
+          'babel-loader',
+          'ts-loader'
+        ],
         exclude: /node_modules/
       },
       {
         test: /\.scss/,
-        loader: 'sass-loader'
+        use: [
+          'style-loader',
+          'css-loader?-autoprefixer',
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.html/,
+        use: [
+          'html-loader?interpolate=require'
+        ]
       }
     ]
   },
@@ -28,11 +43,15 @@ module.exports = {
     __dirname: false,
     __filename: false
   },
+  resolve: {
+    extensions: [".js", ".ts", ".html", ".json"]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './electron/index.html',
       filename: path.join(__dirname, 'dist/', 'index.html'),
-      inject: false
+      inject: true,
+      excludeChunks: ['main']
     })
   ]
 };

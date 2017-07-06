@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "experimentalDecorators": true,
+    "outDir": "out"
+  },
+  "include": [
+    "electron/**/*.ts"
+  ]
+}
