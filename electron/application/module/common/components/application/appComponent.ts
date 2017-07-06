@@ -1,6 +1,6 @@
 export class ApplicationComponent implements ng.IComponentOptions {
   public controller = ApplicationController;
-  public template = require('./appComponent.html');
+  public template = require('./appTemplate.html');
 }
 
 export class ApplicationController implements ng.IController {
