@@ -13,7 +13,8 @@ body {
 }
 
 header {
-  background-color: #aaf;
+  background-color: #effbfb;
+  border-bottom: 1px solid #444;
   height: 50px;
   position: fixed;
   width: 100%;
@@ -27,7 +28,19 @@ header {
   }
 
   .header__logo {
-    margin-left: 10px;    
+    margin-left: 10px;
+    text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+
+    a {
+      color: #eeffff;
+      font-size: 23px;
+      letter-spacing: 2px;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
   }
 
   .header__menu {

@@ -10,4 +10,5 @@ Homestead.json
 /public/vendor
 .DS_Store
 /docker/docker-compose.yml
+/docker/docker-compose_sample.yml
 /dist
